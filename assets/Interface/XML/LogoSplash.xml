@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    
+    <screen id="start" controller="mygame.LogoSplashState">
+        <layer id="layer" backgroundColor="#000f" childLayout="center">  
+            
+            <!-- A panel with a background image that goes from the image to black to create a fade out effect -->
+            <panel id="panel1" align="center" valign="center" backgroundImage="Interface/Images/SplashScreens/LogoSplash.png">
+                <effect>
+                    <!-- After effect is complete, a method is called from the controller to go on to the next screen -->
+                    <onStartScreen name="fade" startDelay="13000" start="#f" end="#0" length="3000" neverStopRendering="true" onEndEffect="nextScreen()"/>
+                </effect>
+            </panel>
+        
+            <!-- A panel that goes from black to transparent to reveal the image above to create a fade in effect -->
+            <panel id="panel2" align="center" backgroundColor="#000f" >
+                <effect>
+                    <onStartScreen name="fade" startDelay="3000" start="#f" end="#0" length="5000" neverStopRendering="true"/>
+                </effect>
+            </panel>
+            
+        </layer>
+    </screen>
+</nifty>
